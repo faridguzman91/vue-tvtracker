@@ -1,6 +1,19 @@
 # tvtracker
 
-> faridguzman - tvtracker
+> faridguzman - tvtracker.app
+
+tracker voor amerikaanse series en hun kanalen
+
+install deze dependencies eerst
+
+npm install --save bulma
+npm install --save buefy
+npm install --save @fortawesome/fontawesome-svg-core
+npm install --save @fortawesome/free-solid-svg-icons
+npm install --save @fortawesome/free-brands-svg-icons
+npm install --save @fortawesome/free-regular-svg-icons
+npm install --save firebase
+
 
 ## Build Setup
 
