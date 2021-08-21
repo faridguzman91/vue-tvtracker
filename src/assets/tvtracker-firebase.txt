@@ -1,0 +1,43 @@
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js"></script>
+
+
+<script>
+
+  // Your web app's Firebase configuration
+
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+  var firebaseConfig = {
+
+    apiKey: "AIzaSyAJAH0GsV2wDtFilX8UbwfL522kW8RFOE4",
+
+    authDomain: "tvtracker-1956a.firebaseapp.com",
+
+    projectId: "tvtracker-1956a",
+
+    storageBucket: "tvtracker-1956a.appspot.com",
+
+    messagingSenderId: "635274576324",
+
+    appId: "1:635274576324:web:98b30be83db84adbfea491",
+
+    measurementId: "G-F5CY540WF0"
+
+  };
+
+  // Initialize Firebase
+
+  firebase.initializeApp(firebaseConfig);
+
+  firebase.analytics();
+
+</script>
