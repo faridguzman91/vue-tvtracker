@@ -31,12 +31,14 @@
     <br />
     <br />
 
+    <!--als niks gevonden, geef aan-->
     <p v-if="searchError" style="color: white">geen zoek resultaten gevonden.</p>
 
     <div class="columns is-multiline">
       <div class="column is-2" v-for="show in searchResult" :key="show.show.id">
         <div class="card">
           <div class="card-image">
+            <!--link naar url api id-->
             <router-link :to="'/shows/' + show.show.id"
               ><img
                 v-if="show.show.image"
@@ -46,6 +48,7 @@
           </div>
           <div class="card-content">
             <p class="title is-4">
+              <!--link naar url api-->
               <router-link :to="'/shows/' + show.show.id">{{
                 show.show.name
               }}</router-link>
@@ -97,11 +100,14 @@ export default {
         }
       });
     },
+    //herstel zoekresultaat
     clear_search() {
       this.searchInput = "";
       this.searchError = false;
       this.searchResult = [];
     },
+
+    //abboneren
     subscribe(show) {
       this.$emit("subscribe", show);
     },
