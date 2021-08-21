@@ -6,6 +6,8 @@ tracker voor amerikaanse series en hun kanalen
 
 install deze dependencies eerst
 
+
+
 npm install --save bulma
 npm install --save buefy
 npm install --save @fortawesome/fontawesome-svg-core
@@ -13,6 +15,8 @@ npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/free-brands-svg-icons
 npm install --save @fortawesome/free-regular-svg-icons
 npm install --save firebase
+
+fetch url => json naar een /firebase database storage
 
 
 ## Build Setup
@@ -39,5 +43,3 @@ npm run e2e
 # run all tests
 npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
