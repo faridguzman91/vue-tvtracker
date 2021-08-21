@@ -10,21 +10,28 @@
             v-model="searchInput"
           />
 
-          <span class="icon is-small"><fa-icon icon="search" /></span>
+          <span class="icon is-small"> <i class="fas fa-search"></i></span>
         </p>
         <p class="control">
           <button type="submit" class="button is-success">
-            <fa-icon icon="search" />
+            <i class="fas fa-search"></i>
           </button>
         </p>
       </div>
     </form>
 
-    <a @click="clear_search" v-if="searchResult.length > 0" class="pull-left"
-      >herstel zoekopdracht <fa-icon icon="times"
-    /></a>
+    <a
+      @click="clear_search"
+      v-if="searchResult.length > 0"
+      class="pull-left"
+      style="color: white"
+      >herstel zoekopdracht <i class="fas fa-times"></i
+    ></a>
 
-    <p v-if="searchError">geen zoek resultaten gevonden.</p>
+    <br />
+    <br />
+
+    <p v-if="searchError" style="color: white">geen zoek resultaten gevonden.</p>
 
     <div class="columns is-multiline">
       <div class="column is-2" v-for="show in searchResult" :key="show.show.id">
@@ -44,7 +51,8 @@
               }}</router-link>
             </p>
             <p class="subtitle is-6" v-if="show.show.network">
-              Draait op zender: <span>{{ show.show.network.name }}</span>
+              Draait op zender: <span>{{ show.show.network.name }}</span
+              >S
             </p>
           </div>
           <div class="card-footer">
@@ -59,7 +67,7 @@
 </template>
 
 <script>
-import Fetch from "@/library/Fetch";
+import fetch from "@/library/fetch";
 
 export default {
   props: {
@@ -68,18 +76,20 @@ export default {
     },
   },
   data() {
+    //lege zoekopdracht, leeg array
     return {
       searchInput: "",
       searchResult: [],
       searchError: false,
     };
   },
+
   methods: {
     search() {
       this.searchResult = [];
       this.searchError = false;
-
-      Fetch.get("search/shows?q=" + this.searchInput).then((resp) => {
+      //als de query terugkomt bij arraylengte > 0 zoek response anders geef zoekfout aan
+      fetch.get("search/shows?q=" + this.searchInput).then((resp) => {
         if (resp.length > 0) {
           this.searchResult = resp;
         } else {
@@ -102,5 +112,16 @@ export default {
 <style>
 #search {
   padding: 1em 0;
+}
+
+#app {
+  background-color: rgb(97, 124, 163);
+  height: 100%;
+  padding: 30px;
+  border: 10px solid white;
+}
+
+#app i.fa-search {
+  color: white;
 }
 </style>
