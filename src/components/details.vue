@@ -1,4 +1,5 @@
 <template>
+  <!--info html ontvangen en display-->
   <div class="columns">
     <div class="column is-8">
       <router-link to="/"
@@ -11,6 +12,8 @@
         <!--html info vanuit api-->
         <div v-html="details.summary" class="omschrijving"></div>
       </section>
+
+      <!--seizoenen in rooster-->
 
       <div v-for="season in schedule" :key="season.season">
         <h2 class="title is-4">Seizoen {{ season.season }}</h2>

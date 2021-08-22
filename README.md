@@ -2,21 +2,32 @@
 
 > faridguzman - tvtracker.app
 
-tracker voor amerikaanse series en hun kanalen
+tracker voor tv programmas en hun kanalen / abboneren
 
-install deze dependencies eerst
+install deze packages eerst
 
 
 
-npm install --save bulma
+css framework:
+ npm install --save bulma
+
 npm install --save buefy
+
+font awesome:
 npm install --save @fortawesome/fontawesome-svg-core
 npm install --save @fortawesome/free-solid-svg-icons
 npm install --save @fortawesome/free-brands-svg-icons
 npm install --save @fortawesome/free-regular-svg-icons
+
+google firebase database:
 npm install --save firebase
 
+moment
+npm install --save moment
+
 fetch url => json naar een /firebase database storage
+
+api: 'https://api.tvmaze.com/'
 
 
 ## Build Setup

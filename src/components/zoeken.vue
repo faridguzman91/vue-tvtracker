@@ -1,4 +1,5 @@
 <template>
+  <!--zoek template-->
   <div>
     <form id="search" @submit.prevent="search">
       <div class="field has-addons">
@@ -54,13 +55,20 @@
               }}</router-link>
             </p>
             <p class="subtitle is-6" v-if="show.show.network">
-              Draait op zender: <span>{{ show.show.network.name }}</span
-              >S
+              Draait op zender: <span>{{ show.show.network.name }}</span>
             </p>
           </div>
           <div class="card-footer">
             <div class="card-footer-item">
-              <a><fa-icon icon="rss" /> Abboneren</a>
+              <a v-if="!is_geabboneerd(show.show)" @click="abbonneren(show.show)"
+                ><font-awesome-icon icon="rss" /> Abboneren</a
+              >
+              <a
+                v-if="is_geabboneerd(show.show)"
+                @click="abbonneren(show.show)"
+                class="has-text-success"
+                ><font-awesome-icon icon="rss" /> Geabbonneerd</a
+              >
             </div>
           </div>
         </div>
@@ -74,7 +82,7 @@ import fetch from "@/library/fetch";
 
 export default {
   props: {
-    is_subscribed: {
+    is_geabboneerd: {
       type: Function,
     },
   },
@@ -108,8 +116,8 @@ export default {
     },
 
     //abboneren
-    subscribe(show) {
-      this.$emit("subscribe", show);
+    abbonneren(show) {
+      this.$emit("abbonneren", show);
     },
   },
 };
